@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemorySziaService } from './mocks/szia-db';
 import { AirlineModule } from './airline/airline.module';
+import { BASE_PATH } from './base-path.token';
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import { AirlineModule } from './airline/airline.module';
         AppRouteModule
     ],
     declarations: [AppComponent],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    providers: [{provide: BASE_PATH, useValue: '/app'}]
 })
 export class AppModule {
 }

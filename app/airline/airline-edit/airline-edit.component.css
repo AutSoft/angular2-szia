@@ -1,0 +1,16 @@
+.container {
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+}
+
+#image {
+    order: 1;
+    flex-basis: 20%;
+    margin: 10px;
+}
+
+#form {
+    order: 2;
+    flex-basis: 80%;
+}

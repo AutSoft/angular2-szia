@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
                 <small>South-Zubogy International Airport</small>
             </h1>
         </div>
-        <router-outlet></router-outlet>
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
   `,
 })
 export class AppComponent {
