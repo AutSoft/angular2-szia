@@ -1,0 +1,13 @@
+# IDE files
+.idea
+.vscode
+
+# Node modules
+node_modules
+
+# .js and .js.map files
+app/**/*.js
+app/**/*.js.map
+
+npm-debug.log
+e2e
