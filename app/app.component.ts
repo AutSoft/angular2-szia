@@ -3,11 +3,15 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'my-app',
     template: `
-        <div class="page-header">
-            <h1>SZIA
-                <small>South-Zubogy International Airport</small>
-            </h1>
-        </div>
+        <nav class="navbar navbar-default">
+            <span class="navbar-brand">
+                South-Zubogy International Airport
+            </span>
+            <ul class="nav navbar-nav pull-right">
+                <li routerLinkActive="active"><a routerLink="/airlines">Airlines</a></li>
+                <li routerLinkActive="active"><a routerLink="/flights">Flights</a></li>
+            </ul>
+        </nav>
         <div class="container">
             <router-outlet></router-outlet>
         </div>

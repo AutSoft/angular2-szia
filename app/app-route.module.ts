@@ -3,6 +3,10 @@ import { RouterModule } from '@angular/router';
 
 const routes = [
     {
+        path: 'flights',
+        loadChildren: 'app/flight/flight.module#FlightModule'
+    },
+    {
         path: '',
         redirectTo: '/airlines',
         pathMatch: 'full'

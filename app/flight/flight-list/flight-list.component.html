@@ -1,0 +1,30 @@
+<div>
+    <table id="table" class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th></th>
+            <th class="col-sm-1">Nr</th>
+            <th>Departure time</th>
+            <th>Arrival time</th>
+            <th>Arrival</th>
+            <th>Check-in</th>
+            <th>Gate</th>
+            <th>Status</th>
+            <th>Delay</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tr *ngFor="let flight of flights">
+            <td><i class="fa fa-plane" [class.fa-rotate-90]="isArriving(flight)" aria-hidden="true"></i></td>
+            <td class="col-sm-1"><b>{{flight.flightNumber}}</b></td>
+            <td>{{flight.departureTime | date:'shortTime'}}</td>
+            <td>{{flight.arrivalTime | date:'shortTime'}}</td>
+            <td>{{flight.arrival}}</td>
+            <td>{{isArriving(flight) ? flight.checkinDeskNumber : ''}}</td>
+            <td>{{isArriving(flight) ? flight.gateNumber : ''}}</td>
+            <td>{{flight.status}}</td>
+            <td>{{flight.delay}} {{flight.delay > 1 ? 'mins' : 'min'}}</td>
+            <td class="action-icon"><span class="action-icon glyphicon glyphicon-option-horizontal"></span></td>
+        </tr>
+    </table>
+</div>
