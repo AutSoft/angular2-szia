@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Flight } from '../flight';
 import { FlightService } from '../flight.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     moduleId: module.id,
@@ -11,7 +12,7 @@ import { FlightService } from '../flight.service';
 export class FlightListComponent implements OnInit {
     private flights: Flight[];
 
-    constructor(private flightService: FlightService) { }
+    constructor(private flightService: FlightService, private router: Router, private route: ActivatedRoute) { }
 
     ngOnInit() {
         this.flightService.getFlights().subscribe(
@@ -21,6 +22,10 @@ export class FlightListComponent implements OnInit {
 
     isArriving(flight: Flight) {
         return flight.arrivalCode == 'SZU';
+    }
+
+    goToFlightDetails(flight: Flight) {
+        this.router.navigate([flight.id], {relativeTo: this.route})
     }
 
 }

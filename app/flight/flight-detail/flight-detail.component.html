@@ -1,0 +1,22 @@
+<h1>{{flight?.flightNumber}}</h1>
+<dl>
+    <dt>Departure date</dt>
+    <dd>{{flight?.departureTime | date:'short'}}</dd>
+    <dt>Departure</dt>
+    <dd>{{flight?.departureCity}}, {{flight?.departure}}</dd>
+    <dt>Arrival date</dt>
+    <dd>{{flight?.arrivalTime | date:'short'}}</dd>
+    <dt>Arrival</dt>
+    <dd>{{flight?.arrivalCity}}, {{flight?.arrival}}</dd>
+    <dt>Check-in desk</dt>
+    <dd>{{flight?.checkinDeskNumber}}</dd>
+    <dt>Gate</dt>
+    <dd>{{flight?.gateNumber}}</dd>
+    <dt>Status</dt>
+    <dd>{{flight?.status}}</dd>
+    <dt>Delay</dt>
+    <dd>{{flight?.delay}} {{flight?.delay <= 1 ? 'min' : 'mins'}}</dd>
+    <dt>Comment</dt>
+    <dd>{{flight?.comment}}</dd>
+</dl>
+<button class="btn btn-default" (click)="goBack()">Back</button>

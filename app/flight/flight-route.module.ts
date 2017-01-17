@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FlightComponent } from './flight.component';
 import { FlightListComponent } from './flight-list/flight-list.component';
+import { FlightDetailComponent } from './flight-detail/flight-detail.component';
 
 const routes: Routes = [
     {
@@ -11,6 +12,10 @@ const routes: Routes = [
             {
                 path: '',
                 component: FlightListComponent
+            },
+            {
+                path: ':id',
+                component: FlightDetailComponent
             }
         ]
     }

@@ -23,8 +23,9 @@
             <td>{{isArriving(flight) ? flight.checkinDeskNumber : ''}}</td>
             <td>{{isArriving(flight) ? flight.gateNumber : ''}}</td>
             <td>{{flight.status}}</td>
-            <td>{{flight.delay}} {{flight.delay > 1 ? 'mins' : 'min'}}</td>
-            <td class="action-icon"><span class="action-icon glyphicon glyphicon-option-horizontal"></span></td>
+            <td>{{flight.delay}} {{flight.delay <= 1 ? 'min' : 'mins'}}</td>
+            <td class="action-icon"><span (click)="goToFlightDetails(flight)"
+                                          class="action-icon glyphicon glyphicon-option-horizontal"></span></td>
         </tr>
     </table>
 </div>
