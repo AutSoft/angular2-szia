@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
                 <small>South-Zubogy International Airport</small>
             </h1>
         </div>
-        <h1>SZIA</h1>
+        <router-outlet></router-outlet>
   `,
 })
-export class AppComponent {}
+export class AppComponent {
+}
