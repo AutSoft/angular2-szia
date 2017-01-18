@@ -2,7 +2,7 @@
     <div id="image">
         <img [src]="airline?.imageUrl || ''">
     </div>
-    <form id="form" #form="ngForm">
+    <form id="form" #form="ngForm" (ngSubmit)="updateAirline()">
         <div class="form-group">
             <label for="name" class="control-label">Name</label>
             <input type="text" class="form-control" id="name" required [ngModel]="airline?.name"
@@ -13,9 +13,9 @@
             <input type="text" class="form-control" id="code" required [ngModel]="airline?.airlineCode"
                    (ngModelChange)="airline.airlineCode = $event" name="code">
         </div>
+        <div class="pull-right">
+            <button class="btn btn-default" (click)="navigateBack()">Cancel</button>
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
+        </div>
     </form>
-</div>
-<div class="pull-right">
-    <button class="btn btn-default" (click)="navigateBack()">Cancel</button>
-    <button class="btn btn-primary" [disabled]="form.invalid" (click)="updateAirline()">Save</button>
 </div>
