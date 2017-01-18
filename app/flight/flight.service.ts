@@ -33,6 +33,7 @@ export class FlightService {
         };
 
         return this.http.post(this.basePath + '/flights/' + flight.id, flight, requestOptions)
+            .map((response: Response) => response.json().data)
             .catch((response: Response) => {
                 console.log(response);
                 return Observable.throw(response);

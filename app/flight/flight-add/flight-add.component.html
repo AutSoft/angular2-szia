@@ -1,0 +1,111 @@
+<div class="pull-right">
+    <button type="button" class="btn btn-default" (click)="modal.show()"><span class="glyphicon glyphicon-plus"></span>
+    </button>
+</div>
+
+<div class="modal fade" bsModal #modal="bs-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div id="modal" class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title pull-left">New flight</h4>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="modal.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form">
+                    <div>
+                        <div class="form-group">
+                            <label for="nr">Flight number</label>
+                            <input id="nr" class="form-control" type="text" formControlName="flightNumber">
+                            <small class="error"
+                                   [hidden]="form.controls.flightNumber.valid || (form.controls.flightNumber.pristine && !submitted)">
+                                Flight number is required.
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="airline">Airline</label>
+                            <select id="airline" class="form-control" formControlName="airlineId">
+                                <option *ngFor="let airline of airlines" [ngValue]="airline.id">{{airline.name}}
+                                </option>
+                            </select>
+                            <small class="error"
+                                   [hidden]="form.controls.airlineId.valid || (form.controls.airlineId.pristine && !submitted)">
+                                Airline is required.
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="departure">Departure airport</label>
+                            <input id="departure" class="form-control" type="text" formControlName="departure">
+                            <small class="error"
+                                   [hidden]="form.controls.departure.valid || (form.controls.departure.pristine && !submitted)">
+                                Departure airport is required.
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="arrival">Arrival airport</label>
+                            <input id="arrival" class="form-control" type="text" formControlName="arrival">
+                            <small class="error"
+                                   [hidden]="form.controls.arrival.valid || (form.controls.arrival.pristine && !submitted)">
+                                Arrival airport is required.
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select id="status" class="form-control" formControlName="status">
+                                <option *ngFor="let status of statuses" [ngValue]="status">{{status}}</option>
+                            </select>
+                            <small class="error"
+                                   [hidden]="form.controls.status.valid || (form.controls.status.pristine && !submitted)">
+                                Status is required.
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="check-in">Check-in desk</label>
+                            <input id="check-in" type="number" class="form-control" formControlName="checkinDeskNumber">
+                            <small class="error" [hidden]="!form.controls.checkinDeskNumber.errors?.required
+            || (form.controls.checkinDeskNumber.pristine && !submitted)">
+                                Check-in desk number is required.
+                            </small>
+                            <small class="error" [hidden]="!form.controls.checkinDeskNumber.errors?.range">
+                                Check-in desk number must be between {{minCheckinGateNumber}} and
+                                {{maxCheckinGateNumber}}.
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="gate">Gate</label>
+                            <input id="gate" type="number" class="form-control" formControlName="gateNumber">
+                            <small class="error" [hidden]="!form.controls.gateNumber.errors?.required
+            || (form.controls.gateNumber.pristine && !submitted)">
+                                Gate number is required.
+                            </small>
+                            <small class="error" [hidden]="!form.controls.gateNumber.errors?.range">
+                                Gate number must be between {{minGateNumber}} and {{maxGateNumber}}.
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="delay">Delay</label>
+                            <div class="input-group">
+                                <input id="delay" type="number" class="form-control" formControlName="delay">
+                                <div class="input-group-addon">min(s)</div>
+                            </div>
+                            <small class="error" [hidden]="!form.controls.delay.errors?.min">
+                                Delay can not be negative.
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Comment</label>
+                            <input id="comment" class="form-control" type="text" formControlName="comment">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button class="btn btn-default" (click)="modal.hide()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" (click)="save()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

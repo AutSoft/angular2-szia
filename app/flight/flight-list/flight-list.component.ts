@@ -28,4 +28,8 @@ export class FlightListComponent implements OnInit {
         this.router.navigate([flight.id], {relativeTo: this.route})
     }
 
+    addFlight(flight: Flight) {
+        this.flights.push(flight);
+    }
+
 }

@@ -5,14 +5,27 @@ import { FlightRouteModule } from './flight-route.module';
 import { FlightService } from './flight.service';
 import { FlightListComponent } from './flight-list/flight-list.component';
 import { FlightDetailComponent } from './flight-detail/flight-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FlightAddComponent } from './flight-add/flight-add.component';
+import { AirlineModule } from '../airline/airline.module';
+import { CustomFormsModule } from 'ng2-validation';
+import { ModalModule } from 'ng2-bootstrap';
 
 @NgModule({
-    imports: [CommonModule, FlightRouteModule],
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        CustomFormsModule,
+        AirlineModule,
+        ModalModule.forRoot(),
+        FlightRouteModule
+    ],
     exports: [],
     declarations: [
         FlightComponent,
         FlightListComponent,
-        FlightDetailComponent
+        FlightDetailComponent,
+        FlightAddComponent
     ],
     providers: [FlightService],
 })

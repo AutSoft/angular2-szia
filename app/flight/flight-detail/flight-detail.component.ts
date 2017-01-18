@@ -9,14 +9,14 @@ import { FlightService } from '../flight.service';
     templateUrl: 'flight-detail.component.html'
 })
 export class FlightDetailComponent implements OnInit {
-    private flight: Flight;
+    private flight: Flight = null;
 
     constructor(private route: ActivatedRoute, private router: Router, private flightService: FlightService) { }
 
     ngOnInit() {
         this.route.params
             .switchMap((params: Params) => this.flightService.getFlightDetails(+params['id']))
-            .subscribe(flight => this.flight = flight);
+            .subscribe(flight => this.flight = flight, () => this.flight = null);
     }
 
     goBack() {

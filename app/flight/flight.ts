@@ -14,5 +14,5 @@ export class Flight {
     delay: number;
     comment?: string;
     id: number;
-    airlineId: number;
+    airlineId?: number;
 }
