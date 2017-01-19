@@ -30,6 +30,6 @@ export class AirlineListComponent implements OnInit {
     }
 
     startEditing(airline: Airline) {
-        this.router.navigate(['./edit', airline.id], {relativeTo: this.route});
+        this.router.navigate(['.', airline.id], {relativeTo: this.route});
     }
 }

@@ -17,7 +17,7 @@ const routes = [
                 component: AirlineListComponent,
                 children: [
                     {
-                        path: 'edit/:id',
+                        path: ':id',
                         component: AirlineEditComponent,
                         canDeactivate: [DeactivateGuardService]
                     }

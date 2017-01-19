@@ -14,3 +14,7 @@
     order: 2;
     flex-basis: 80%;
 }
+
+.error {
+    color: firebrick;
+}
