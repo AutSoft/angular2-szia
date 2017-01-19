@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './auth/auth.service';
 
 @Component({
     selector: 'my-app',
@@ -7,9 +9,10 @@ import { Component } from '@angular/core';
             <span class="navbar-brand">
                 South-Zubogy International Airport
             </span>
-            <ul class="nav navbar-nav pull-right">
+            <ul *ngIf="authService.isLoggedIn" class="nav navbar-nav pull-right">
                 <li routerLinkActive="active"><a routerLink="/airlines">Airlines</a></li>
                 <li routerLinkActive="active"><a routerLink="/flights">Flights</a></li>
+                <li><button class="btn btn-default navbar-btn" (click)="logOut()">Log out</button></li>
             </ul>
         </nav>
         <div class="container">
@@ -18,4 +21,12 @@ import { Component } from '@angular/core';
   `,
 })
 export class AppComponent {
+
+    constructor(private router: Router, private authService: AuthService) {}
+
+    logOut() {
+        this.authService.logOut().subscribe(
+            () => this.router.navigate(['/login'])
+        );
+    }
 }

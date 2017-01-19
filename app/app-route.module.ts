@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from './auth/login.component';
 
 const routes = [
     {
         path: 'flights',
         loadChildren: 'app/flight/flight.module#FlightModule'
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     },
     {
         path: '',

@@ -11,7 +11,10 @@ export class FlightService {
 
     getFlights(): Observable<Flight[]> {
         return this.http.get(this.basePath + '/flights')
-            .map((response: Response) => response.json().data)
+            .map((response: Response) => {
+                let data = response.json();
+                return data.data || data;
+            })
             .catch((response: Response) => {
                 console.log(response);
                 return Observable.throw(response);
@@ -20,7 +23,10 @@ export class FlightService {
 
     getFlightDetails(id: number): Observable<Flight> {
         return this.http.get(this.basePath + '/flights/' + id)
-            .map((response: Response) => response.json().data)
+            .map((response: Response) => {
+                let data = response.json();
+                return data.data || data;
+            })
             .catch((response: Response) => {
                 console.log(response);
                 return Observable.throw(response);
@@ -32,8 +38,11 @@ export class FlightService {
             headers: new Headers({'content-type': 'application/json'})
         };
 
-        return this.http.post(this.basePath + '/flights/' + flight.id, flight, requestOptions)
-            .map((response: Response) => response.json().data)
+        return this.http.post(this.basePath + '/flights', flight, requestOptions)
+            .map((response: Response) => {
+                let data = response.json();
+                return data.data || data;
+            })
             .catch((response: Response) => {
                 console.log(response);
                 return Observable.throw(response);

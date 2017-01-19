@@ -204,6 +204,9 @@ export class InMemorySziaService implements InMemoryDbService {
                 'airlineId': 3
             }
         ];
-        return {airlines, flights};
+
+        let login: any[] = [];
+
+        return {airlines, flights, login};
     }
 }

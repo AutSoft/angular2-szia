@@ -11,7 +11,10 @@ export class AirlineService {
 
     getAirlines(): Observable<Airline[]> {
         return this.http.get(this.basePath + '/airlines')
-            .map((response: Response) => response.json().data)
+            .map((response: Response) => {
+                let data = response.json();
+                return data.data || data;
+            })
             .catch((response: Response) => {
                 console.log(response);
                 return Observable.throw(response);
@@ -20,7 +23,10 @@ export class AirlineService {
 
     getAirline(id: number): Observable<Airline> {
         return this.http.get(this.basePath + '/airlines/' + id)
-            .map((response: Response) => response.json().data)
+            .map((response: Response) => {
+                let data = response.json();
+                return data.data || data;
+            })
             .catch((response: Response) => {
                 console.log(response);
                 return Observable.throw(response);
