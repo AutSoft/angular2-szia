@@ -9,6 +9,7 @@ import { BASE_PATH } from './base-path.token';
 import { AuthService } from './auth/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { LoginComponent } from './auth/login.component';
+import { DeactivateGuardService } from './deactivate-guard.service';
 
 @NgModule({
     imports: [
@@ -20,7 +21,7 @@ import { LoginComponent } from './auth/login.component';
     ],
     declarations: [AppComponent, LoginComponent],
     bootstrap: [AppComponent],
-    providers: [{provide: BASE_PATH, useValue: '/api'}, AuthService, AuthGuardService]
+    providers: [{provide: BASE_PATH, useValue: '/api'}, AuthService, AuthGuardService, DeactivateGuardService]
 })
 export class AppModule {
 }

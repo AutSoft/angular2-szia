@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AirlineListComponent } from './airline-list/airline-list.component';
 import { AirlineEditComponent } from './airline-edit/airline-edit.component';
 import { AuthGuardService } from '../auth/auth-guard.service';
+import { DeactivateGuardService } from '../deactivate-guard.service';
 
 const routes = [
     {
@@ -17,7 +18,8 @@ const routes = [
                 children: [
                     {
                         path: 'edit/:id',
-                        component: AirlineEditComponent
+                        component: AirlineEditComponent,
+                        canDeactivate: [DeactivateGuardService]
                     }
                 ]
             }
