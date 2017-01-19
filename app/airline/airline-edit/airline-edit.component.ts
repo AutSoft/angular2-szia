@@ -11,7 +11,7 @@ import { CanComponentDeactivate } from '../../deactivate-guard.service';
     styleUrls: ['airline-edit.component.css']
 })
 export class AirlineEditComponent implements OnInit, CanComponentDeactivate {
-    private airline: Airline;
+    airline: Airline;
     private inputAirline: Airline;
 
     constructor(

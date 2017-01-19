@@ -9,7 +9,7 @@ import { FlightService } from '../flight.service';
     templateUrl: 'flight-detail.component.html'
 })
 export class FlightDetailComponent implements OnInit {
-    private flight: Flight = null;
+    flight: Flight = null;
 
     constructor(private route: ActivatedRoute, private router: Router, private flightService: FlightService) { }
 

@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
     styleUrls: ['flight-list.component.css']
 })
 export class FlightListComponent implements OnInit {
-    private flights: Flight[];
+    flights: Flight[];
 
     constructor(private flightService: FlightService, private router: Router, private route: ActivatedRoute) { }
 
