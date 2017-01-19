@@ -34,6 +34,27 @@
                                 Airline is required.
                             </small>
                         </div>
+                        <div>
+                            <label>Departure time</label>
+                            <div class="container">
+                                <div class="date">
+                                    <div>
+                                        <datepicker formControlName="departureTime"  [minDate]="minDepartureDate" [showWeeks]="true"></datepicker>
+                                    </div>
+                                    <small class="error"
+                                           [hidden]="form.controls.departureTime.valid || (form.controls.departureTime.pristine && !submitted)">
+                                        Departure date is required.
+                                    </small>
+                                </div>
+                                <div class="time">
+                                    <timepicker formControlName="departureTime"></timepicker>
+                                    <small class="error"
+                                           [hidden]="form.controls.departureTime.valid || (form.controls.departureTime.pristine && !submitted)">
+                                        Departure time is required.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="departure">Departure airport</label>
                             <input id="departure" class="form-control" type="text" formControlName="departure">
@@ -49,6 +70,27 @@
                                    [hidden]="form.controls.arrival.valid || (form.controls.arrival.pristine && !submitted)">
                                 Arrival airport is required.
                             </small>
+                        </div>
+                        <div>
+                            <label>Arrival time</label>
+                            <div class="container">
+                                <div class="date">
+                                    <div>
+                                        <datepicker formControlName="arrivalTime" [minDate]="form.value.departureTime" [showWeeks]="true"></datepicker>
+                                    </div>
+                                    <small class="error"
+                                           [hidden]="form.controls.arrivalTime.valid || (form.controls.airrivalTime.pristine && !submitted)">
+                                        Arrival date is required.
+                                    </small>
+                                </div>
+                                <div class="time">
+                                    <timepicker formControlName="arrivalTime"></timepicker>
+                                    <small class="error"
+                                           [hidden]="form.controls.arrivalTime.valid || (form.controls.arrivalTime.pristine && !submitted)">
+                                        Arrival time is required.
+                                    </small>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="status">Status</label>

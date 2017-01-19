@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FlightAddComponent } from './flight-add/flight-add.component';
 import { AirlineModule } from '../airline/airline.module';
 import { CustomFormsModule } from 'ng2-validation';
-import { ModalModule } from 'ng2-bootstrap';
+import { ModalModule, DatepickerModule, TimepickerModule } from 'ng2-bootstrap';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
@@ -18,6 +18,8 @@ import { SharedModule } from '../shared/shared.module';
         CustomFormsModule,
         AirlineModule,
         ModalModule,
+        DatepickerModule,
+        TimepickerModule,
         FlightRouteModule
     ],
     exports: [],

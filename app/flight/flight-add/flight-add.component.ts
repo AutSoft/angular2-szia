@@ -25,12 +25,15 @@ export class FlightAddComponent implements OnInit {
     maxCheckinGateNumber = 50;
     minGateNumber = 1;
     maxGateNumber = 25;
+    minDepartureDate = new Date();
     @ViewChild('modal') modal: ModalDirective;
     @Output() flightAdd = new EventEmitter<Flight>();
 
     constructor(private airlineService: AirlineService, private flightService: FlightService) {
         this.form = new FormGroup({
             flightNumber: new FormControl(undefined, Validators.required),
+            departureTime: new FormControl(new Date(), Validators.required),
+            arrivalTime: new FormControl(new Date(), Validators.required),
             departure: new FormControl(undefined, Validators.required),
             arrival: new FormControl(undefined, Validators.required),
             status: new FormControl(undefined, Validators.required),
