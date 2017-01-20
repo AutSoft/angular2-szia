@@ -20,8 +20,8 @@
             <td>{{flight.departureTime | date:'shortTime'}}</td>
             <td>{{flight.arrivalTime | date:'shortTime'}}</td>
             <td>{{flight.arrival}}</td>
-            <td>{{isArriving(flight) ? flight.checkinDeskNumber : ''}}</td>
-            <td>{{isArriving(flight) ? flight.gateNumber : ''}}</td>
+            <td>{{flight.checkinDeskNumber}}</td>
+            <td>{{flight.gateNumber}}</td>
             <td>{{flight.status}}</td>
             <td>{{flight.delay}} {{flight.delay <= 1 ? 'min' : 'mins'}}</td>
             <td class="action-icon"><span (click)="goToFlightDetails(flight)"

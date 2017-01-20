@@ -47,7 +47,7 @@
                                     </small>
                                 </div>
                                 <div class="time">
-                                    <timepicker formControlName="departureTime"></timepicker>
+                                    <timepicker formControlName="departureTime" [showMeridian]="false"></timepicker>
                                     <small class="error"
                                            [hidden]="form.controls.departureTime.valid || (form.controls.departureTime.pristine && !submitted)">
                                         Departure time is required.
@@ -84,7 +84,7 @@
                                     </small>
                                 </div>
                                 <div class="time">
-                                    <timepicker formControlName="arrivalTime"></timepicker>
+                                    <timepicker formControlName="arrivalTime" [showMeridian]="false"></timepicker>
                                     <small class="error"
                                            [hidden]="form.controls.arrivalTime.valid || (form.controls.arrivalTime.pristine && !submitted)">
                                         Arrival time is required.

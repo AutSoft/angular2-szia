@@ -31,18 +31,36 @@ export class FlightAddComponent implements OnInit {
 
     constructor(private airlineService: AirlineService, private flightService: FlightService) {
         this.form = new FormGroup({
-            flightNumber: new FormControl(undefined, Validators.required),
-            departureTime: new FormControl(new Date(), Validators.required),
-            arrivalTime: new FormControl(new Date(), Validators.required),
-            departure: new FormControl(undefined, Validators.required),
-            arrival: new FormControl(undefined, Validators.required),
-            status: new FormControl(undefined, Validators.required),
-            checkinDeskNumber: new FormControl(undefined, [Validators.required, CustomValidators.range([this.minCheckinGateNumber, this.maxCheckinGateNumber])]),
-            gateNumber: new FormControl(undefined, [Validators.required, CustomValidators.range([this.minGateNumber, this.maxGateNumber])]),
-            delay: new FormControl(0, CustomValidators.min(0)),
-            comment: new FormControl(undefined),
-            airlineId: new FormControl(undefined, Validators.required)
+            flightNumber: new FormControl(Validators.required),
+            departureTime: new FormControl(Validators.required),
+            arrivalTime: new FormControl(Validators.required),
+            departure: new FormControl(Validators.required),
+            arrival: new FormControl(Validators.required),
+            status: new FormControl(Validators.required),
+            checkinDeskNumber: new FormControl([Validators.required, CustomValidators.range([this.minCheckinGateNumber, this.maxCheckinGateNumber])]),
+            gateNumber: new FormControl([Validators.required, CustomValidators.range([this.minGateNumber, this.maxGateNumber])]),
+            delay: new FormControl(CustomValidators.min(0)),
+            comment: new FormControl(),
+            airlineId: new FormControl(Validators.required)
         });
+        this.init();
+    }
+
+    private init() {
+        let flight: Flight = {
+            flightNumber: null,
+            departureTime: new Date(),
+            arrivalTime: new Date(),
+            departure: null,
+            arrival: null,
+            status: null,
+            checkinDeskNumber: null,
+            gateNumber: null,
+            delay: 0,
+            comment: null,
+            airlineId: null
+        };
+        this.form.setValue(flight);
     }
 
     ngOnInit() {
@@ -53,10 +71,13 @@ export class FlightAddComponent implements OnInit {
 
     save() {
         this.submitted = true;
+        if(this.form.invalid) return;
         this.flightService.postFlight(this.form.value as Flight).subscribe(
             flight => {
                 this.flightAdd.emit(flight);
                 this.modal.hide();
+                this.init();
+                this.submitted = false;
             }
         );
     }
