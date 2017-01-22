@@ -31,17 +31,17 @@ export class FlightAddComponent implements OnInit {
 
     constructor(private airlineService: AirlineService, private flightService: FlightService) {
         this.form = new FormGroup({
-            flightNumber: new FormControl(Validators.required),
-            departureTime: new FormControl(Validators.required),
-            arrivalTime: new FormControl(Validators.required),
-            departure: new FormControl(Validators.required),
-            arrival: new FormControl(Validators.required),
-            status: new FormControl(Validators.required),
-            checkinDeskNumber: new FormControl([Validators.required, CustomValidators.range([this.minCheckinGateNumber, this.maxCheckinGateNumber])]),
-            gateNumber: new FormControl([Validators.required, CustomValidators.range([this.minGateNumber, this.maxGateNumber])]),
-            delay: new FormControl(CustomValidators.min(0)),
-            comment: new FormControl(),
-            airlineId: new FormControl(Validators.required)
+            flightNumber: new FormControl(null, Validators.required),
+            departureTime: new FormControl(null, Validators.required),
+            arrivalTime: new FormControl(null, Validators.required),
+            departure: new FormControl(null, Validators.required),
+            arrival: new FormControl(null, Validators.required),
+            status: new FormControl(null, Validators.required),
+            checkinDeskNumber: new FormControl(null, [Validators.required, CustomValidators.range([this.minCheckinGateNumber, this.maxCheckinGateNumber])]),
+            gateNumber: new FormControl(null, [Validators.required, CustomValidators.range([this.minGateNumber, this.maxGateNumber])]),
+            delay: new FormControl(null, CustomValidators.min(0)),
+            comment: new FormControl(null),
+            airlineId: new FormControl(null, Validators.required)
         });
         this.init();
     }
