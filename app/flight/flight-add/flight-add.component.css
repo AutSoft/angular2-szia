@@ -8,21 +8,6 @@
     overflow-x: hidden;
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-}
-
-.date {
-    order: 1;
-    flex-basis: 50%;
-}
-
-.time {
-    order: 2;
-    flex-basis: 50%;
-}
-
-datepicker {
-    display: inline-block;
+p-calendar {
+    display: block;
 }

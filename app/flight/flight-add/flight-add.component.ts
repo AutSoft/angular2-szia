@@ -25,15 +25,15 @@ export class FlightAddComponent implements OnInit {
     maxCheckinGateNumber = 50;
     minGateNumber = 1;
     maxGateNumber = 25;
-    minDepartureDate = new Date();
+    minDepartureTime = new Date();
     @ViewChild('modal') modal: ModalDirective;
     @Output() flightAdd = new EventEmitter<Flight>();
 
     constructor(private airlineService: AirlineService, private flightService: FlightService) {
         this.form = new FormGroup({
             flightNumber: new FormControl(null, Validators.required),
-            departureTime: new FormControl(null, Validators.required),
-            arrivalTime: new FormControl(null, Validators.required),
+            departureTime: new FormControl(null, [Validators.required, CustomValidators.minDate(this.minDepartureTime)]),
+            arrivalTime: new FormControl(null, [Validators.required, CustomValidators.minDate(this.minDepartureTime)]),
             departure: new FormControl(null, Validators.required),
             arrival: new FormControl(null, Validators.required),
             status: new FormControl(null, Validators.required),
@@ -76,10 +76,20 @@ export class FlightAddComponent implements OnInit {
             flight => {
                 this.flightAdd.emit(flight);
                 this.modal.hide();
+                this.form.reset({departureTime: new Date()});
                 this.init();
                 this.submitted = false;
             }
         );
+    }
+
+    setArrivalTimeValidation(departureTime: Date) {
+        this.form.controls['arrivalTime'].setValidators([Validators.required, CustomValidators.minDate(departureTime)]);
+        this.form.controls['arrivalTime'].updateValueAndValidity();
+    }
+
+    get minArrivalTime() {
+        return this.form ? this.form.value.departureTime : null;
     }
 
 }
