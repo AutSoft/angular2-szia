@@ -10,17 +10,22 @@ import { AuthService } from './auth/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { LoginComponent } from './auth/login.component';
 import { DeactivateGuardService } from './deactivate-guard.service';
+// import {InMemoryWebApiModule} from "angular-in-memory-web-api";
+// import {InMemorySziaService} from "./mocks/szia-db";
 
 @NgModule({
     imports: [
         BrowserModule,
         HttpModule,
+        // csak ha a mock db-t akarom használni
+        //InMemoryWebApiModule.forRoot(InMemorySziaService),
         Ng2BootstrapModule.forRoot(),
         AirlineModule,
         AppRouteModule
     ],
     declarations: [AppComponent, LoginComponent],
     bootstrap: [AppComponent],
+    // '/app' kell ha a mock db-t akarom
     providers: [{provide: BASE_PATH, useValue: '/api'}, AuthService, AuthGuardService, DeactivateGuardService]
 })
 export class AppModule {

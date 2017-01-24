@@ -7,7 +7,7 @@ import { AuthService } from './auth/auth.service';
     template: `
         <nav class="navbar navbar-default">
             <span class="navbar-brand">
-                South-Zubogy International Airport
+                {{title}}
             </span>
             <ul *ngIf="authService.isLoggedIn" class="nav navbar-nav pull-right">
                 <li routerLinkActive="active"><a routerLink="/airlines">Airlines</a></li>
@@ -21,6 +21,9 @@ import { AuthService } from './auth/auth.service';
   `,
 })
 export class AppComponent {
+
+    // TODO tesztelhetőbb ha változó
+    title = "South-Zubogy International Airport";
 
     constructor(private router: Router, private authService: AuthService) {}
 

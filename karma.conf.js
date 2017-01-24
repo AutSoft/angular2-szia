@@ -74,7 +74,10 @@ module.exports = function(config) {
             {pattern: appSrcBase + '**/*.ts', included: false, watched: false},
             {pattern: appBase + '**/*.js.map', included: false, watched: false},
             {pattern: testingSrcBase + '**/*.ts', included: false, watched: false},
-            {pattern: testingBase + '**/*.js.map', included: false, watched: false}
+            {pattern: testingBase + '**/*.js.map', included: false, watched: false},
+
+            // 'node_modules/angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+            // { pattern: 'node_modules/angular-in-memory-web-api/**/*.js', included: false, watched: false },
         ],
 
         // Proxied base paths for loading assets
