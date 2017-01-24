@@ -36,7 +36,7 @@
                         </div>
                         <div class="form-group">
                             <label>Departure time</label>
-                            <p-calendar formControlName="departureTime" (onSelect)="setArrivalTimeValidation($event)" [minDate]="minDepartureTime" [showTime]="true"></p-calendar>
+                            <p-calendar formControlName="departureTime" [minDate]="minDepartureTime" [showTime]="true"></p-calendar>
                             <small class="error"
                                    [hidden]="form.controls.departureTime.valid || (form.controls.departureTime.pristine && !submitted)">
                                 <span [hidden]="!form.controls.departureTime.errors?.required">Departure date is required.</span>
@@ -120,7 +120,7 @@
             </div>
             <div class="modal-footer">
                 <div class="pull-right">
-                    <button class="btn btn-default" (click)="modal.hide()">Cancel</button>
+                    <button class="btn btn-default" (click)="reset(); modal.hide()">Cancel</button>
                     <button type="submit" class="btn btn-primary" (click)="save()">Submit</button>
                 </div>
             </div>

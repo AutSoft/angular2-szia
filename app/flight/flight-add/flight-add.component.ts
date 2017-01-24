@@ -32,8 +32,8 @@ export class FlightAddComponent implements OnInit {
     constructor(private airlineService: AirlineService, private flightService: FlightService) {
         this.form = new FormGroup({
             flightNumber: new FormControl(null, Validators.required),
-            departureTime: new FormControl(null, [Validators.required, CustomValidators.minDate(this.minDepartureTime)]),
-            arrivalTime: new FormControl(null, [Validators.required, CustomValidators.minDate(this.minDepartureTime)]),
+            departureTime: new FormControl(null, Validators.required),
+            arrivalTime: new FormControl(null, Validators.required),
             departure: new FormControl(null, Validators.required),
             arrival: new FormControl(null, Validators.required),
             status: new FormControl(null, Validators.required),
@@ -71,25 +71,26 @@ export class FlightAddComponent implements OnInit {
 
     save() {
         this.submitted = true;
+        this.form.controls['arrivalTime'].updateValueAndValidity();
         if(this.form.invalid) return;
         this.flightService.postFlight(this.form.value as Flight).subscribe(
             flight => {
                 this.flightAdd.emit(flight);
                 this.modal.hide();
-                this.form.reset({departureTime: new Date()});
-                this.init();
+                this.reset();
                 this.submitted = false;
             }
         );
     }
 
-    setArrivalTimeValidation(departureTime: Date) {
-        this.form.controls['arrivalTime'].setValidators([Validators.required, CustomValidators.minDate(departureTime)]);
-        this.form.controls['arrivalTime'].updateValueAndValidity();
+    reset() {
+        this.submitted = false;
+        this.form.reset();
+        this.init();
     }
 
     get minArrivalTime() {
-        return this.form ? this.form.value.departureTime : null;
+        return this.form && this.form.value.departureTime ? this.form.value.departureTime : this.minDepartureTime;
     }
 
 }
