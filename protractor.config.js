@@ -32,7 +32,7 @@ exports.config = {
     useAllAngular2AppRoots: true,
 
     // Base URL for application server
-    baseUrl: 'http://localhost:8080',
+    baseUrl: 'http://localhost:3000',
 
     // doesn't seem to work.
     // resultJsonOutputFile: "foo.json",
@@ -44,7 +44,7 @@ exports.config = {
         //// jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: 'all'}));
 
         // debugging
-        // console.log('browser.params:' + JSON.stringify(browser.params));
+        // console.warn('browser.params:' + JSON.stringify(browser.params));
         jasmine.getEnv().addReporter(new Reporter(browser.params));
 
         // Allow changing bootstrap mode to NG1 for upgrade tests

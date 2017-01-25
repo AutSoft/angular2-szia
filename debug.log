@@ -1,0 +1,6 @@
+[0125/143009:ERROR:process_reader_win.cc(114)] NtOpenThread: {Hozzáférés megtagadva} A folyamat hozzáférést kért egy objektumhoz, de ehhez nem volt engedélye.  (0xc0000022)
+[0125/143009:ERROR:exception_snapshot_win.cc(87)] thread ID 6868 not found in process
+[0125/143009:WARNING:crash_report_exception_handler.cc(61)] ProcessSnapshotWin::Initialize failed
+[0125/144032:ERROR:process_reader_win.cc(114)] NtOpenThread: {Hozzáférés megtagadva} A folyamat hozzáférést kért egy objektumhoz, de ehhez nem volt engedélye.  (0xc0000022)
+[0125/144032:ERROR:exception_snapshot_win.cc(87)] thread ID 6040 not found in process
+[0125/144032:WARNING:crash_report_exception_handler.cc(61)] ProcessSnapshotWin::Initialize failed

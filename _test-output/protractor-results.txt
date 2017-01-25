@@ -1,0 +1,7 @@
+Protractor results for: 2017-01-25 14:55:24
+
+AppDir:./
+  Suite: Protractor Demo App -- passed
+    passed - kell, hogy legyen egy cím
+    passed - írjunk be input adatokat
+
