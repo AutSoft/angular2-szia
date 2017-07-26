@@ -34,11 +34,7 @@ export class AirlineService {
     }
 
     updateAirline(airline: Airline): Observable<Airline> {
-        let requestOptions: RequestOptionsArgs = {
-            headers: new Headers({'content-type': 'application/json'})
-        };
-
-        return this.http.put(this.basePath + '/airlines/' + airline.id, airline, requestOptions)
+          return this.http.put(this.basePath + '/airlines/' + airline.id, airline)
             .catch((response: Response) => {
                 console.log(response);
                 return Observable.throw(response);
