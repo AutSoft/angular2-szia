@@ -10,10 +10,12 @@ import { AuthService } from './auth/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { LoginComponent } from './auth/login.component';
 import { DeactivateGuardService } from './deactivate-guard.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         HttpModule,
         Ng2BootstrapModule.forRoot(),
         AirlineModule,
