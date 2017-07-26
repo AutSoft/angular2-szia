@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { Ng2BootstrapModule } from 'ng2-bootstrap';
 import { AppRouteModule } from './app-route.module';
 import { HttpModule } from '@angular/http';
-import { AirlineModule } from './airline/airline.module';
 import { BASE_PATH } from './base-path.token';
 import { AuthService } from './auth/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
@@ -18,7 +17,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         BrowserAnimationsModule,
         HttpModule,
         Ng2BootstrapModule.forRoot(),
-        AirlineModule,
         AppRouteModule
     ],
     declarations: [AppComponent, LoginComponent],

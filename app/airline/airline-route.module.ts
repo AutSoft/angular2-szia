@@ -8,7 +8,7 @@ import { DeactivateGuardService } from '../deactivate-guard.service';
 
 const routes = [
     {
-        path: 'airlines',
+        path: '',
         component: AirlineComponent,
         canActivate: [AuthGuardService],
         children: [

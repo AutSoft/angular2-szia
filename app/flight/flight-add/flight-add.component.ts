@@ -47,7 +47,7 @@ export class FlightAddComponent implements OnInit {
     }
 
     private init() {
-        let flight: Flight = {
+        let flight = {
             flightNumber: null,
             departureTime: new Date(),
             arrivalTime: new Date(),
