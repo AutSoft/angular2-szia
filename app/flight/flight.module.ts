@@ -10,6 +10,7 @@ import { AirlineModule } from '../airline/airline.module';
 import { CustomFormsModule } from 'ng2-validation';
 import { ModalModule, DatepickerModule, TimepickerModule } from 'ng2-bootstrap';
 import { SharedModule } from '../shared/shared.module';
+import { CalendarModule } from 'primeng/components/calendar/calendar';
 
 @NgModule({
     imports: [
@@ -18,8 +19,7 @@ import { SharedModule } from '../shared/shared.module';
         CustomFormsModule,
         AirlineModule,
         ModalModule,
-        DatepickerModule,
-        TimepickerModule,
+        CalendarModule,
         FlightRouteModule
     ],
     exports: [],

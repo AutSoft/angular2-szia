@@ -6,13 +6,13 @@ export class Flight {
     departureCode?: string;
     arrivalCity?: string;
     arrivalCode?: string;
-    departureTime: string;
-    arrivalTime: string;
+    departureTime: Date;
+    arrivalTime: Date;
     status: string;
     checkinDeskNumber: number;
     gateNumber: number;
     delay: number;
     comment?: string;
-    id: number;
+    id?: number;
     airlineId?: number;
 }

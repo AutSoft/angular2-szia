@@ -1,4 +1,4 @@
-import {browser, element, by, protractor} from "protractor";
+import {browser, element, by, protractor} from 'protractor';
 
 // TODO kikommentelni mert timeout hibát dobhat
 // let origFn = browser.driver.controlFlow().execute;
@@ -17,20 +17,20 @@ describe('Protractor Demo App', function() {
     });
 
     it('kell, hogy legyen egy cím', () => {
-        expect(browser.getTitle()).toEqual('SZIA App');
+        expect<any>(browser.getTitle()).toEqual('SZIA App');
     });
 
     it('írjunk be input adatokat', () => {
         let firstInput = element(by.id('username'));
         let secondInput = element(by.id('pwd'));
-        let loginBtn = element(by.css("button"));
+        let loginBtn = element(by.css('button'));
 
-        firstInput.sendKeys("test");
-        secondInput.sendKeys("1234");
+        firstInput.sendKeys('test');
+        secondInput.sendKeys('1234');
 
         loginBtn.click();
 
         // TODO kikommentelni mert timeout hibát dobhat
-        //browser.sleep(3000);
+        // browser.sleep(3000);
     });
 });

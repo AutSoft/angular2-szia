@@ -10,3 +10,4 @@ app/**/*.js
 app/**/*.js.map
 
 npm-debug.log
+e2e

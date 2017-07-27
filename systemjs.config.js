@@ -14,10 +14,13 @@
             app: 'app',
 
             // angular bundles
+            '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
+            '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
             '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
             '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
             '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
             '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+            '@angular/platform-browser/animations': 'npm:@angular/platform-browser/bundles/platform-browser-animations.umd.js',
             '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
             '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
             '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
@@ -26,8 +29,10 @@
             // other libraries
             'rxjs': 'npm:rxjs',
             'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-            'ng2-bootstrap': 'npm:ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
-            'ng2-validation': 'npm:ng2-validation'
+            'ng2-bootstrap': 'npm:ng2-bootstrap/bundles/ngx-bootstrap.umd.js',
+            'ng2-validation': 'npm:ng2-validation/bundles/ng2-validation.umd.js',
+            'libphonenumber-js'   : 'npm:libphonenumber-js/bundle/libphonenumber-js.min.js',
+            'primeng': 'npm:primeng'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -39,10 +44,10 @@
                 main: 'Rx.js',
                 defaultExtension: 'js'
             },
-            'ng2-validation': {
-                main: 'dist/index.js',
+            primeng: {
+                main: 'primeng.js',
                 defaultExtension: 'js'
-             }
+            }
         }
     });
 })(this);

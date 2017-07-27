@@ -4,17 +4,21 @@ import { LoginComponent } from './auth/login.component';
 
 const routes = [
     {
+        path: '',
+        redirectTo: '/airlines',
+        pathMatch: 'full'
+    },
+    {
         path: 'flights',
         loadChildren: 'app/flight/flight.module#FlightModule'
     },
     {
-        path: 'login',
-        component: LoginComponent
+        path: 'airlines',
+        loadChildren: 'app/airline/airline.module#AirlineModule'
     },
     {
-        path: '',
-        redirectTo: '/airlines',
-        pathMatch: 'full'
+        path: 'login',
+        component: LoginComponent
     }
 ];
 

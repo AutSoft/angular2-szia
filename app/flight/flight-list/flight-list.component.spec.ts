@@ -7,6 +7,7 @@ import {FlightListComponent} from "./flight-list.component";
 import {FlightService} from "../flight.service";
 import {BASE_PATH} from "../../base-path.token";
 import {Component} from "@angular/core";
+import {Flight} from '../flight';
 
 @Component({
     selector: 'flight-add',
@@ -21,7 +22,7 @@ describe('Flight list component', () => {
     let flightService: FlightService;
     let comp: FlightListComponent;
     let getFlightsSpy: jasmine.Spy;
-    const flights = [
+    const flights: Flight[] = [
         {
             'flightNumber': 'LY 8045',
             'departure': 'South Zubogy International Airport',
@@ -30,8 +31,8 @@ describe('Flight list component', () => {
             'departureCode': 'SZU',
             'arrivalCity': 'London',
             'arrivalCode': 'LHR',
-            'departureTime': '2017-01-17T20:50:00.000Z',
-            'arrivalTime': '2017-01-17T23:10:00.000Z',
+            'departureTime': new Date(),
+            'arrivalTime': new Date(),
             'status': 'Boarding',
             'checkinDeskNumber': 17,
             'gateNumber': 22,
@@ -48,8 +49,8 @@ describe('Flight list component', () => {
             'departureCode': 'FRA',
             'arrivalCity': 'South Zubogy',
             'arrivalCode': 'SZU',
-            'departureTime': '2017-01-17T21:00:00.000Z',
-            'arrivalTime': '2017-01-17T23:25:00.000Z',
+            'departureTime': new Date(),
+            'arrivalTime': new Date(),
             'status': 'Delayed',
             'checkinDeskNumber': 16,
             'gateNumber': 23,
@@ -66,8 +67,8 @@ describe('Flight list component', () => {
             'departureCode': 'SZU',
             'arrivalCity': 'Moscow',
             'arrivalCode': 'SVU',
-            'departureTime': '2017-01-17T21:50:00.000Z',
-            'arrivalTime': '2017-01-18T00:20:00.000Z',
+            'departureTime': new Date(),
+            'arrivalTime': new Date(),
             'status': 'Departing',
             'checkinDeskNumber': 8,
             'gateNumber': 1,

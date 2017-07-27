@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 
 @NgModule({
-    imports: [HttpModule, CommonModule],
-    exports: [HttpModule, CommonModule],
+    imports: [CommonModule],
+    exports: [CommonModule],
     declarations: [],
     providers: [],
 })
