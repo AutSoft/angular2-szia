@@ -108,7 +108,7 @@ describe('AirlineService', () => {
             expect(result.airlineCode).toEqual(airline.airlineCode);
         });
         expect(getAirlineSpy).toHaveBeenCalled();
-        // valőban kétszer futott
+        // valóban kétszer futott
         expect(getAirlineSpy).toHaveBeenCalledTimes(2);
         // az adott paraméterekkel futott
         expect(getAirlineSpy).toHaveBeenCalledWith(1);

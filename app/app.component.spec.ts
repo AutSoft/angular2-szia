@@ -3,9 +3,9 @@ import {async, ComponentFixture, TestBed, fakeAsync, tick} from '@angular/core/t
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { RouterTestingModule} from '@angular/router/testing';
-import { HttpModule } from "@angular/http";
-import {BASE_PATH} from "./base-path.token";
-import {AuthService} from "./auth/auth.service";
+import { HttpModule } from '@angular/http';
+import {BASE_PATH} from './base-path.token';
+import {AuthService} from './auth/auth.service';
 
 describe('AppComponent', function() {
     let de: DebugElement;

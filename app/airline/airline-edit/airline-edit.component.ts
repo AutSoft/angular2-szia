@@ -17,7 +17,7 @@ export class AirlineEditComponent implements OnInit, CanComponentDeactivate {
 
     constructor(private route: ActivatedRoute,
         private airlineService: AirlineService,
-        private router: Router,) { }
+        private router: Router) { }
 
     ngOnInit() {
         this.route.params

@@ -1,12 +1,12 @@
 /* tslint:disable:no-unused-variable */
 import {TestBed, async, ComponentFixture} from '@angular/core/testing';
-import { HttpModule } from "@angular/http";
-import {RouterTestingModule} from "@angular/router/testing";
-import {Observable} from "rxjs";
-import {FlightListComponent} from "./flight-list.component";
-import {FlightService} from "../flight.service";
-import {BASE_PATH} from "../../base-path.token";
-import {Component} from "@angular/core";
+import { HttpModule } from '@angular/http';
+import {RouterTestingModule} from '@angular/router/testing';
+import {Observable} from 'rxjs';
+import {FlightListComponent} from './flight-list.component';
+import {FlightService} from '../flight.service';
+import {BASE_PATH} from '../../base-path.token';
+import {Component} from '@angular/core';
 import {Flight} from '../flight';
 
 @Component({

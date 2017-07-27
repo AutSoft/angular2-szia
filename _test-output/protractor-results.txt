@@ -1,4 +1,4 @@
-Protractor results for: 2017-07-27 11:09:32
+Protractor results for: 2017-07-27 16:42:12
 
 AppDir:./
   Suite: Protractor Demo App -- passed
