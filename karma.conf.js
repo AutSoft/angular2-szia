@@ -88,7 +88,7 @@ module.exports = function(config) {
 
         exclude: [],
         preprocessors: {},
-        reporters: ['progress', 'kjhtml'],
+        reporters: ['progress', 'kjhtml', 'junit'],
 
         port: 9876,
         colors: true,
